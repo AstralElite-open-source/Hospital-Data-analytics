@@ -1,0 +1,75 @@
+"""
+Script to create the data exploration notebook
+"""
+
+import json
+
+notebook_content = {
+    "cells": [
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "# Hospital Patient Analytics - Data Exploration\n",
+                "\n",
+                "This notebook provides an initial exploration of the hospital patient data."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Import required libraries\n",
+                "import pandas as pd\n",
+                "import numpy as np\n",
+                "import matplotlib.pyplot as plt\n",
+                "import seaborn as sns\n",
+                "import plotly.express as px\n",
+                "import plotly.graph_objects as go\n",
+                "from pathlib import Path\n",
+                "import sys\n",
+                "\n",
+                "# Add src to path\n",
+                "sys.path.append('../src')\n",
+                "\n",
+                "from data_processing.data_loader import DataLoader\n",
+                "from analysis.admission_analysis import AdmissionAnalyzer\n",
+                "from visualization.charts import ChartGenerator\n",
+                "\n",
+                "# Set up plotting\n",
+                "plt.style.use('seaborn-v0_8')\n",
+                "sns.set_palette(\"husl\")\n",
+                "%matplotlib inline"
+            ]
+        }
+    ],
+    "metadata": {
+        "kernelspec": {
+            "display_name": "Python 3",
+            "language": "python",
+            "name": "python3"
+        },
+        "language_info": {
+            "codemirror_mode": {
+                "name": "ipython",
+                "version": 3
+            },
+            "file_extension": ".py",
+            "mimetype": "text/x-python",
+            "name": "python",
+            "nbconvert_exporter": "python",
+            "pygments_lexer": "ipython3",
+            "version": "3.8.0"
+        }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 4
+}
+
+# Save the notebook
+with open('notebooks/01_data_exploration.ipynb', 'w') as f:
+    json.dump(notebook_content, f, indent=2)
+
+print("Notebook created successfully!")
