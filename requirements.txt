@@ -1,62 +1,62 @@
-# Data Analysis and Manipulation
-pandas==2.1.4
+# 📊 Data Analysis and Manipulation (Windows Compatible)
+pandas==2.0.3
 numpy==1.24.3
-scipy==1.11.4
+scipy==1.10.1
 
-# Machine Learning
-scikit-learn==1.3.2
-xgboost==2.0.2
-lightgbm==4.1.0
+# 🤖 Machine Learning
+scikit-learn==1.3.0
+xgboost==1.7.6
+lightgbm==4.0.0
 
-# Data Visualization
-matplotlib==3.8.2
-seaborn==0.13.0
-plotly==5.17.0
-bokeh==3.3.2
+# 📈 Data Visualization
+matplotlib==3.7.1
+seaborn==0.12.2
+plotly==5.15.0
+bokeh==3.1.1
 
-# Interactive Dashboards
-streamlit==1.28.2
-dash==2.16.1
-dash-bootstrap-components==1.5.0
+# 🧩 Interactive Dashboards
+streamlit==1.28.0
+dash==2.14.1
+dash-bootstrap-components==1.4.1
 
-# Statistical Analysis
+# 📐 Statistical Analysis
 statsmodels==0.14.1
 
-# Geospatial Analysis
+# 🌍 Geospatial Analysis
 folium==0.15.1
 geopandas==0.14.1
 
-# Time Series Analysis
+# ⏳ Time Series Analysis
 prophet==1.1.5
 
-# Jupyter Notebooks
+# 📒 Jupyter Notebook Support
 jupyter==1.0.0
 ipykernel==6.27.1
 ipywidgets==8.1.1
 
-# Progress Bars and Utilities
+# ⚙️ Utilities and Progress Bars
 tqdm==4.66.1
 python-dotenv==1.0.0
 
-# Data Quality and Profiling
+# 🧪 Data Quality and Profiling
 pandas-profiling==3.6.6
 great-expectations==0.18.8
 
-# API and Web Framework
+# 🌐 API and Web Framework
 fastapi==0.104.1
 uvicorn==0.24.0
 
-# Database Connectivity
+# 🗄️ Database Connectivity
 sqlalchemy==2.0.25
 psycopg2-binary==2.9.9
 
-# Excel Support
+# 📊 Excel File Support
 openpyxl==3.1.2
 xlsxwriter==3.1.9
 
-# Image Processing (for charts)
-pillow==10.1.0
+# 🖼️ Image Processing
+pillow==9.5.0
 
-# Configuration Management
+# ⚙️ Configuration Management
 pydantic==2.5.2
 pydantic-settings==2.1.0

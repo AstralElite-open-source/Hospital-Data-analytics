@@ -1,0 +1,17 @@
+services:
+  # Hospital Analytics - Just run start.ps1!
+  hospital-analytics:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hospital-analytics
+    ports:
+      - "8501:8501"
+    volumes:
+      # Mount data directories for persistence
+      - ./data:/app/data
+      - ./exports:/app/exports
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
+    restart: unless-stopped

@@ -39,7 +39,7 @@ Write-Host "✅ Pip upgraded" -ForegroundColor Green
 
 # Install requirements
 Write-Host "`n📥 Installing requirements..." -ForegroundColor Yellow
-pip install -r requirements_simple.txt
+pip install -r clickre.txt
 if ($LASTEXITCODE -ne 0) {
     Write-Host "❌ Failed to install requirements" -ForegroundColor Red
     exit 1
