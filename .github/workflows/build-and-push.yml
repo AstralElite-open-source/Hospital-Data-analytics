@@ -14,7 +14,7 @@ env:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       contents: read
       packages: write
@@ -47,6 +47,7 @@ jobs:
           type=raw,value=latest,enable={{is_default_branch}}
 
     - name: Build and push Docker image
+      id: build
       uses: docker/build-push-action@v5
       with:
         context: .
@@ -58,9 +59,10 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
-    - name: Generate artifact attestation
-      uses: actions/attest-build-provenance@v1
-      with:
-        subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
-        subject-digest: ${{ steps.build.outputs.digest }}
-        push-to-registry: true
+    # Attestation only works on GitHub-hosted runners, skip for self-hosted
+    # - name: Generate artifact attestation
+    #   uses: actions/attest-build-provenance@v1
+    #   with:
+    #     subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
+    #     subject-digest: ${{ steps.build.outputs.digest }}
+    #     push-to-registry: true
