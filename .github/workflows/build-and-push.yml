@@ -14,10 +14,11 @@ env:
 
 jobs:
   build-and-push:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest  # Use GitHub-hosted runner
     permissions:
       contents: read
       packages: write
+      id-token: write  # Required for attestation
 
     steps:
     - name: Checkout repository
@@ -59,10 +60,9 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
-    # Attestation only works on GitHub-hosted runners, skip for self-hosted
-    # - name: Generate artifact attestation
-    #   uses: actions/attest-build-provenance@v1
-    #   with:
-    #     subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
-    #     subject-digest: ${{ steps.build.outputs.digest }}
-    #     push-to-registry: true
+    - name: Generate artifact attestation
+      uses: actions/attest-build-provenance@v1
+      with:
+        subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
+        subject-digest: ${{ steps.build.outputs.digest }}
+        push-to-registry: true
